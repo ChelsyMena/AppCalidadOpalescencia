@@ -1,0 +1,7 @@
+click==8.0.3
+dash==2.1.0
+keras==2.7.0
+numpy==1.22.0
+opencv_python==4.5.5.62
+Pillow==9.0.1
+waitress==2.0.0
