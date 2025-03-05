@@ -11,11 +11,6 @@ Once the image is classified, the app displays the result to the user and prompt
 - Classify the image as **acceptable** or **not**.
 - Save the predictions and observations in a text file for record-keeping.
 
-## 🎥 Demo
-<video width="560" height="315" controls>
-  <source src="Funcionamiento Aplicacion ML.mp4" type="video/mp4">
-</video>
-
 ## 📸 How It Works
 1. **Webcam Capture:** The user can open their webcam within the app.
 2. **Image Classification:** The captured image is passed through the pre-trained **Keras** model to predict its category.
@@ -31,5 +26,3 @@ Once the image is classified, the app displays the result to the user and prompt
 ## 📬 Contact
 
 💼 [LinkedIn](https://www.linkedin.com/in/chelsy-mena-gonzalez) | 📧 [chelsymg@gmail.com](mailto:chelsymg@gmail.com)
-
-
