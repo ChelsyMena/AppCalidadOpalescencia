@@ -108,15 +108,15 @@ def tomar_foto(n_clicks, value):
         cv2.destroyWindow("Presione Enter para tomar la foto")
 
         filepath = f"{partida}.png"
-        filepath_final = fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\App Dash\assets\{partida}_0.png"
+        filepath_final = fr"assets\{partida}_0.png"
         cv2.imwrite(filepath, frame)
 
         if os.path.exists(filepath_final):
             
-            archivos = glob.glob(fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\App Dash\assets\*")
+            archivos = glob.glob(fr"assets\*")
             fotos = [x for x in archivos if partida in x]
             i = int(re.search('_[0-9]*', fotos[-1])[0][1:])+1
-            filepath_final = fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\App Dash\assets\{partida}_{i}.png"
+            filepath_final = fr"assets\{partida}_{i}.png"
             os.renames(filepath, filepath_final)
         else:
             os.renames(filepath, filepath_final)
@@ -141,10 +141,9 @@ def clasificar(n_clicks, value):
     elif n_clicks>=1: 
         
         partida = str(value)
-        archivos = glob.glob(fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\App Dash\assets\*")
+        archivos = glob.glob(fr"assets\*")
         fotos = [x for x in archivos if partida in x]
         filepath_final = fotos[-1]
-        #filepath_final = fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\App Dash\assets\{partida}.png"
         image = Image.open(filepath_final)
         size = (224, 224)
         image = ImageOps.fit(image, size, Image.ANTIALIAS)
@@ -182,4 +181,3 @@ def abrir_chrome():
 if __name__ == '__main__':
     Thread(target = abrir_chrome).run()
     app.run_server(debug=True)
-
