@@ -79,7 +79,7 @@ def tomar_foto(n_clicks, value):
 
         partida = str(value)
         filepath = f"{partida}.png"
-        filepath_final = fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\assets\{filepath}"
+        filepath_final = fr"assets\{filepath}"
         cv2.imwrite(filepath, frame)
 
         os.renames(filepath, filepath_final)
@@ -101,7 +101,7 @@ def clasificar(n_clicks, value):
 
     elif n_clicks>=1: 
         partida = str(value)
-        filepath_final = fr"D:\Users\chelsy.mena\OneDrive - Centro de Servicios Mundial SAS\Documentos\En Proceso\Calidad\ML Visual\assets\{partida}.png"
+        filepath_final = fr"\assets\{partida}.png"
         image = Image.open(filepath_final)
         size = (224, 224)
         image = ImageOps.fit(image, size, Image.ANTIALIAS)
